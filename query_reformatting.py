@@ -24,7 +24,7 @@ def make_json_query(user_query, textpresso_token, openai_token,
      since_num (int) : used for pagination. Skip the first results and return entries from the specified number. Note that the counter starts from 0 - i.e., the first document is number 0.
      count (int) : used for pagination. Return up to the specified number of results. Maximum value is 200
 
-    In the query object, the following fields are possible:
+    In the query object, the following fields are possible. Note that the user may ask for multiple genes, traits, etc. so make sure to use AND and OR appropriately. 
     keywords (string) : (optional) the keywords to match in the text. Can contain logical operators AND and OR and grouping by round brackets
     exclude_keywords (string) : (optional) the keywords to exclude. Can contain logical operators AND and OR and grouping by round brackets
     year (string) : (optional) year of publication of the paper
