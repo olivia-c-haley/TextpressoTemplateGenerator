@@ -39,6 +39,12 @@ def make_json_query(user_query, textpresso_token, openai_token,
     case_sensitive (boolean) : whether to perform a case sensitive search. Default value is false
     sort_by_year (boolean) : whether the results have to be sorted by publication date. Default value is false 
 
+    Rules for keyword conversion:
+      1. The species name (e.g., maize) should always be included with AND.
+      2. All main concepts in the query should be connected with AND, unless the user explicitly mentions alternatives (like "or").
+      3. Remove filler words ("the", "of", "in", etc.).
+      4. Use parentheses to group related concepts for clarity.
+      
     A valid output format is below: 
     {
       "token": "<ACCESS_TOKEN>",
